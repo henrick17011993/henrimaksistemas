@@ -1,0 +1,144 @@
+.div-input {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.div-input label {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    text-align: left; /* Alinha a label à esquerda */
+}
+
+.div-input input,
+.div-input select {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+button {
+    padding: 0.75rem 2rem; /* Ajusta o tamanho do botão */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #007BFF;
+    color: white;
+    font-size: 1rem;
+}
+
+button#CadastroEditar, #btnButton {
+    display: block;
+}
+
+#CadastroEditar, #btnVoltar {
+    display: inline-block;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #6a11cb;
+    background-color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#CadastroEditar:hover, #btnButton:hover {
+    background-color: #2980b9;
+}
+
+main div.showw {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    font-size: 18px;
+    background: linear-gradient(to right, #6a11cb, hsla(252, 13%, 46%, 1));
+    color: #ffffff;
+    max-height: 400px;
+}
+
+#divNome{
+    width: 406px;
+    margin: 0px -100px 0px -90px;
+}
+
+#divCor{
+    width: 406px;
+    margin: 0px -99px 0px 0px;
+}
+#divValor{
+    width: 106px;
+    margin: 0px -99px 0px 0px;
+}
+#imagemExibicao{
+    width: 106px;
+    max-width: 236px;
+    max-height: 214px;
+    margin: -65px 0px 3px 0px;
+}
+
+#imagemExibicao {
+    margin: -148px 0px 0px 0px;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+#uploadButton {
+    padding: 10px 20px;
+    font-size: 14px;
+    color: #fff;
+    background: linear-gradient(to right, #6a11cb, hsla(252, 13%, 46%, 1));
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#uploadButton:disabled {
+    cursor: not-allowed;
+    background-color: #95a5a6;
+}
+
+#uploadButton:hover:not(:disabled) {
+    background-color: #2980b9;
+}
+#divCategoria {
+    margin-left: 221px;
+}
+#uploadButton {
+    position: fixed;
+    margin-top: 80px;
+    margin-right: 197px;
+}
+#imagemExibicao {
+    position: fixed;
+    margin-top: -102px;
+    margin-left: 266px;
+}
+
+.img-container::after {
+    
+    font-size: 14px;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}

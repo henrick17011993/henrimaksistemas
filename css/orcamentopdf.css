@@ -1,0 +1,105 @@
+body {
+    font-family: "Arial", sans-serif;
+}
+
+.container {
+    max-width: 100%;
+}
+
+h1, h2, h3, h4 {
+    text-align: center;
+    color: #6a11cb;
+}
+
+.table-container {
+    border: 1px solid  #6a11cb;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.category-header {
+    background: linear-gradient(to right, #6a11cb, hsla(252, 13%, 46%, 1));
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    text-align: left;
+    padding: 12px;
+    border-bottom: 1px solid #fff;
+}
+
+th {
+    background: linear-gradient(to right, #6a11cb, hsla(252, 13%, 46%, 1));
+    color: #fff;
+}
+
+.image-container {
+    width: 70px;
+    height: 100px;
+    overflow: hidden;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+}
+
+.totals-container {
+    margin-top: 20px;
+    background: linear-gradient(to right, #6a11cb, hsla(252, 13%, 46%, 1));
+    color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    white-space: pre-line;
+    text-align: right;
+}
+
+
+
+.detalhes-container1,
+.detalhes-container2 {
+    float: left;
+    width: calc(50% - 10px); /* 50% de largura, subtraindo a margem entre as divs */
+    margin-right: 10px; /* Espaçamento entre as divs */
+    background: linear-gradient(to right, #6a11cb, hsla(252, 13%, 46%, 1));
+    color: #fff;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.194);
+    padding: 15px;
+}
+
+.detalhes-cliente h2,
+.detalhes-evento h2 {
+    color: #fff;
+    grid-column: span 2;
+}
+
+.detalhe {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.detalhe span {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+/* Adicionado estilo para o contêiner pai */
+.detalhes-container-wrapper {
+    display: flex;
+    gap: 10px; /* Ajuste o valor do espaçamento conforme necessário */
+}
+
+
+

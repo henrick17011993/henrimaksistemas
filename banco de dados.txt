@@ -1,0 +1,315 @@
+-- --------------------------------------------------------
+-- Servidor:                     127.0.0.1
+-- Versão do servidor:           10.4.25-MariaDB - mariadb.org binary distribution
+-- OS do Servidor:               Win64
+-- HeidiSQL Versão:              12.6.0.6765
+-- --------------------------------------------------------
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET NAMES utf8 */;
+/*!50503 SET NAMES utf8mb4 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+
+-- Copiando estrutura do banco de dados para ere
+CREATE DATABASE IF NOT EXISTS `henrimack` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
+USE `henrimack`;
+
+-- Copiando estrutura para tabela ere.cliente
+CREATE TABLE IF NOT EXISTS `clientehenr` (
+  `IDCliente` int(11) NOT NULL AUTO_INCREMENT,
+  `RazaoSocial` varchar(50) DEFAULT NULL,
+  `Endereco` varchar(50) DEFAULT NULL,
+  `Bairro` varchar(50) DEFAULT NULL,
+  `Cep` varchar(50) DEFAULT NULL,
+  `CpfCnpj` varchar(50) DEFAULT NULL,
+  `Telefone` varchar(50) DEFAULT NULL,
+  `WhatsApp` varchar(50) DEFAULT NULL,
+  `Email` varchar(50) DEFAULT NULL,
+  `Contato` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`IDCliente`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4;
+
+-- Copiando dados para a tabela ere.cliente: ~2 rows (aproximadamente)
+INSERT INTO `clientehenr` (`IDCliente`, `RazaoSocial`, `Endereco`, `Bairro`, `Cep`, `CpfCnpj`, `Telefone`, `WhatsApp`, `Email`, `Contato`) VALUES
+	(7, 'fsdfs', 'dsfaf', '5235435345', '452.345.43', '43543523', '452345234', '(34) 3354-5345', 'dfasdfdsa', 'dseueu'),
+	(11, 'henrimack sistemas', 'Rui Barbosa', 'São Paulo', '99950-000', '229.461.628-69', '', '(54) 99667-5769', 'henrimacksistemas@gmail.com', 'Henrique/Makeila'),
+	(12, 'sterilab', 'otto julio maliinna', 'ipiranga', '88111-500', '06.895.210/0002-52', '', '(55) 48919-0389', 'nikolassterilab@gmail.com', 'nikolas');
+
+-- Copiando estrutura para tabela ere.estoque
+CREATE TABLE IF NOT EXISTS `estoquehenr` (
+  `idestoque` int(11) NOT NULL AUTO_INCREMENT,
+  `idproduto` int(11) DEFAULT NULL,
+  `imagem` varchar(255) DEFAULT NULL,
+  `Nestoque` int(11) DEFAULT NULL,
+  `Nfora` int(11) DEFAULT NULL,
+  PRIMARY KEY (`idestoque`),
+  KEY `estoque_produto` (`idproduto`)
+) ENGINE=InnoDB AUTO_INCREMENT=65 DEFAULT CHARSET=UTF8MB4;
+
+-- Copiando dados para a tabela ere.estoque: ~16 rows (aproximadamente)
+INSERT INTO `estoquehenr` (`idestoque`, `idproduto`, `imagem`, `Nestoque`, `Nfora`) VALUES
+	(10, 75, '/henrimack sistsolut/uploads/unnamed.webp', 50, 0),
+	(47, 4, '/henrimack sistsolut/uploads/sofa.webp', 34, 0),
+	(49, 5, '/henrimack sistsolut/uploads/sofa lc branco 2 lugares.webp', 55, 0),
+	(50, 21, '/henrimack sistsolut/uploads/poltrona lc.webp', 55, NULL),
+	(53, 46, '/henrimack sistsolut/uploads/transferir.webp', NULL, 0),
+	(54, 47, '/henrimack sistsolut/uploads/banqueta toledo branca.jfif', NULL, 0),
+	(55, 56, '/henrimack sistsolut/uploads/4.webp', NULL, 0),
+	(56, 57, '/henrimack sistsolut/uploads/puff meia lua.jfif', NULL, 0),
+	(57, 58, '/henrimack sistsolut/uploads/transferir (1).jfif', NULL, 0),
+	(58, 59, '/henrimack sistsolut/uploads/cadeira jacobsen preta.jfif', NULL, 0),
+	(59, 60, '/henrimack sistsolut/uploads/cadeira dkr com rodizio.jfif', NULL, 0),
+	(60, 61, '/henrimack sistsolut/uploads/transferir (2).jfif', NULL, 0),
+	(61, 62, '/henrimack sistsolut/uploads/transferir (6).jfif', NULL, 0),
+	(62, 63, '/henrimack sistsolut/uploads/tapete-redondo-1-m-mel-o-fluffy_spin6.webp', NULL, 0),
+	(63, 64, '/henrimack sistsolut/uploads/Prateleiras pretas.jfif', NULL, 0),
+	(64, 41, '/henrimack sistsolut/uploads/cadeira.webp', 22, 3);
+
+-- Copiando estrutura para tabela ere.orcamento
+CREATE TABLE IF NOT EXISTS `orcamentohenr` (
+  `idorcamento` int(11) NOT NULL AUTO_INCREMENT,
+  `codigounico` varchar(255) NOT NULL,
+  `STATUS` varchar(255) NOT NULL,
+  `razaosocial` varchar(255) NOT NULL,
+  `endereco` varchar(255) NOT NULL,
+  `bairro` varchar(255) NOT NULL,
+  `cep` varchar(255) NOT NULL,
+  `cidade` varchar(255) NOT NULL,
+  `estado` varchar(255) NOT NULL,
+  `Montadora` varchar(255) NOT NULL,
+  `Stand` varchar(255) NOT NULL,
+  `cpfcnpj` varchar(255) NOT NULL,
+  `rg` varchar(255) NOT NULL,
+  `ccm` varchar(255) NOT NULL,
+  `contato` varchar(255) NOT NULL,
+  `telefone` varchar(255) NOT NULL,
+  `WhatsApp` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `nome_evento` varchar(255) NOT NULL,
+  `local` varchar(255) NOT NULL,
+  `data_entrega` date NOT NULL,
+  `data_de` date NOT NULL,
+  `data_ate` date NOT NULL,
+  `DAorcfeito` date DEFAULT NULL,
+  PRIMARY KEY (`idorcamento`)
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8mb4;
+
+-- Copiando dados para a tabela ere.orcamento: ~28 rows (aproximadamente)
+INSERT INTO `orcamentohenr` (`idorcamento`, `codigounico`, `STATUS`, `razaosocial`, `endereco`, `bairro`, `cep`, `cidade`, `estado`, `Montadora`, `Stand`, `cpfcnpj`, `rg`, `ccm`, `contato`, `telefone`, `WhatsApp`, `email`, `nome_evento`, `local`, `data_entrega`, `data_de`, `data_ate`, `DAorcfeito`) VALUES
+	(6, 'hen546-0001', 'Ag/Confir', 'henrique', '', '', '', '', '', '', '', '546.546.546-54', '', '', '', '', '', '', '', '', '0000-00-00', '0000-00-00', '0000-00-00', NULL),
+	(7, 'hen546-0002', 'Ag/Confir', 'henrique', '', '', '', '', '', '', '', '546.546.546-54', '', '', '', '', '', '', '', '', '0000-00-00', '0000-00-00', '0000-00-00', NULL),
+	(8, 'mak341-0001', 'Finalizado', 'makeila', '', '', '', '', '', '', '', '341.324.231-33', '', '', '', '', '', '', '', '', '0000-00-00', '0000-00-00', '0000-00-00', NULL),
+	(9, 'mak341-0002', 'Em Andamento', 'makeila', '', '', '', '', '', '', '', '341.324.231-33', '', '', '', '', '', '', '', '', '0000-00-00', '0000-00-00', '0000-00-00', NULL),
+	(10, 'mak341-0003', 'Em Andamento', 'makeila', '', '', '', '', '', '', '', '341.324.231-33', '', '', '', '', '', '', '', '', '0000-00-00', '0000-00-00', '0000-00-00', NULL),
+	(11, 'mak341-0004', 'Em Andamento', 'makeila', '', '', '', '', '', '', '', '341.324.231-33', '', '', '', '', '', '', '', '', '0000-00-00', '0000-00-00', '0000-00-00', NULL),
+	(12, 'mak341-0005', 'Em Andamento', 'makeila', '', '', '', '', '', '', '', '341.324.231-33', '', '', '', '', '', '', '', '', '0000-00-00', '0000-00-00', '0000-00-00', NULL),
+	(13, 'mak341-0006', 'Em Andamento', 'makeila', '', '', '', '', '', '', '', '341.324.231-33', '', '', '', '', '', '', '', '', '0000-00-00', '0000-00-00', '0000-00-00', NULL),
+	(14, 'mak341-0007', 'Em Andamento', 'makeila', '', '', '', '', '', '', '', '341.324.231-33', '', '', '', '', '', '', '', '', '0000-00-00', '0000-00-00', '0000-00-00', NULL),
+	(15, 'mak341-0008', 'Em Andamento', 'makeila', '', '', '', '', '', '', '', '341.324.231-33', '', '', '', '', '', '', '', '', '0000-00-00', '0000-00-00', '0000-00-00', NULL),
+	(16, 'mak341-0009', 'Em Andamento', 'makeila', '', '', '', '', '', '', '', '341.324.231-33', '', '', '', '', '', '', '', '', '0000-00-00', '0000-00-00', '0000-00-00', NULL),
+	(17, 'mak341-0010', 'Em Andamento', 'makeila', '', '', '', '', '', '', '', '341.324.231-33', '', '', '', '', '', '', '', '', '0000-00-00', '0000-00-00', '0000-00-00', NULL),
+	(18, '-0001', 'Em Andamento', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00', '0000-00-00', '0000-00-00', NULL),
+	(19, '-0002', 'Cancelado', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00', '0000-00-00', '0000-00-00', '2024-05-14'),
+	(20, 'ste06.-0001', 'Em Andamento', 'sterilab', 'otto julio maliinna', 'ipiranga', '88111-500', '', '', '', '', '06.895.210/0002-52', '', '', 'nikolas', '', '(55) 48919-0389', 'nikolassterilab@gmail.com', '', '', '0000-00-00', '0000-00-00', '0000-00-00', '2024-05-15'),
+	(21, 'hen229-0001', 'Cancelado', 'henrimack sistemas', 'Rui Barbosa', 'São Paulo', '99950-000', '', '', '', '', '229.461.628-69', '', '', 'Henrique/Makeila', '', '(54) 99667-5769', 'henrimacksistemas@gmail.com', '', '', '0000-00-00', '0000-00-00', '0000-00-00', '2024-05-29'),
+	(22, 'hen229-0002', 'Cancelado', 'henrimack sistemas', 'Rui Barbosa', 'São Paulo', '99950-000', '', '', '', '', '229.461.628-69', '', '', 'Henrique/Makeila', '', '(54) 99667-5769', 'henrimacksistemas@gmail.com', '', '', '0000-00-00', '0000-00-00', '0000-00-00', '2024-05-29'),
+	(23, '-0003', 'Em Andamento', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00', '0000-00-00', '0000-00-00', '2024-06-08'),
+	(24, '-0004', 'Finalizado', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00', '0000-00-00', '0000-00-00', '2024-06-08'),
+	(25, '-0005', 'Cancelado', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00', '0000-00-00', '0000-00-00', '2024-06-10'),
+	(26, '-0006', 'Finalizado', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00', '0000-00-00', '0000-00-00', '2024-06-10'),
+	(27, '-0007', 'Ag/Confir', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00', '0000-00-00', '0000-00-00', '2024-06-11'),
+	(28, 'hen229-0003', 'Ag/Confir', 'henrimack sistemas', 'Rui Barbosa', 'São Paulo', '99950-000', '', '', '', '', '229.461.628-69', '', '', 'Henrique/Makeila', '', '(54) 99667-5769', 'henrimacksistemas@gmail.com', '', '', '0000-00-00', '0000-00-00', '0000-00-00', '2024-06-11'),
+	(29, 'ste06.-0002', 'Ag/Confir', 'sterilab', 'otto julio maliinna', 'ipiranga', '88111-500', '', '', '', '', '06.895.210/0002-52', '', '', 'nikolas', '', '(55) 48919-0389', 'nikolassterilab@gmail.com', 'sonyy', '', '0000-00-00', '0000-00-00', '0000-00-00', '2024-06-12'),
+	(30, 'ste06.-0003', 'Ag/Confir', 'sterilab', 'otto julio maliinna', 'ipiranga', '88111-500', '', '', '', '', '06.895.210/0002-52', '', '', 'nikolas', '', '(55) 48919-0389', 'nikolassterilab@gmail.com', 'sonyy', 'werer', '2024-06-12', '2024-06-13', '2024-06-14', '2024-06-12'),
+	(31, 'ste06.-0004', 'Cancelado', 'sterilab', 'otto julio maliinna', 'ipiranga', '88111-500', '', '', 'eueueue', 'vcvcvcvcvc', '06.895.210/0002-52', '', '', 'nikolas', '', '(55) 48919-0389', 'nikolassterilab@gmail.com', 'tutututtutu', 'kdkdkdkdkd', '2024-06-12', '2024-06-13', '2024-06-14', '2024-06-12'),
+	(32, 'hen229-0004', 'Ag/Confir', 'henrimack sistemas', 'Rui Barbosa', 'São Paulo', '99950-000', '', '', 'sonyy', 'plaza', '229.461.628-69', '', '', 'Henrique/Makeila', '(54) 99667-5769', '(54) 99667-5769', 'henrimacksistemas@gmail.com', '', '', '0000-00-00', '0000-00-00', '0000-00-00', '2024-06-15'),
+	(33, 'hen229-0005', 'Finalizado', 'henrimack sistemas', 'Rui Barbosa', 'São Paulo', '99950-000', '', '', 'yroqwueyr', 'uiyoiuy', '229.461.628-69', '', '', 'Henrique/Makeila', '', '(54) 99667-5769', 'henrimacksistemas@gmail.com', 'uyoiuyo', '', '0000-00-00', '0000-00-00', '0000-00-00', '2024-06-19');
+
+-- Copiando estrutura para tabela ere.produtosere
+CREATE TABLE IF NOT EXISTS `produtoshenr` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `IMAGEM` varchar(255) NOT NULL,
+  `TIPO` varchar(255) NOT NULL,
+  `MODELOS` varchar(255) NOT NULL,
+  `COR` varchar(255) NOT NULL,
+  `VALOR` decimal(10,2) NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=79 DEFAULT CHARSET=utf8mb4;
+
+-- Copiando dados para a tabela ere.produtosere: ~67 rows (aproximadamente)
+INSERT INTO `produtoshenr` (`ID`, `IMAGEM`, `TIPO`, `MODELOS`, `COR`, `VALOR`) VALUES
+	(1, '/henrimack sistsolut/uploads/transferir (6).jfif', 'Eletro/Acessórios', 'Unifila fita até 2m', 'cromado', 70.00),
+	(2, '/everton/uploads/tapete-redondo-1-m-mel-o-fluffy_spin6.webp', 'Eletro/Acessórios', 'Tapete redondo ', 'cores variasdas', 200.00),
+	(4, '/henrimack sistsolut/uploads/sofa.webp', 'Sofá/Poltronas', 'Sofá Lc 3 lugares', 'Branca/preta demais cores consultar', 290.00),
+	(5, '/henrimack sistsolut/uploads/sofa lc branco 2 lugares.webp', 'Sofá/Poltronas', 'Sofá Lc 2 lugares', 'Branca/preta demais cores consultar', 230.00),
+	(6, '/henrimack sistsolut/uploads/Sofa FK 2 Lugares Branco.jfif', 'Sofá/Poltronas', 'Sofá fk branco 2 lugares', 'Branco/preto demais cores consultar', 295.00),
+	(7, '/henrimack sistsolut/uploads/sofa fk 3 lugares.webp', 'Sofá/Poltronas', 'Sofá fk 3 lugares', 'Branca/preta demais cores consultar', 340.00),
+	(9, '/henrimack sistsolut/uploads/Puff Redondo Branco.webp', 'Puff\'s', 'Puff tamborete', 'Branca/preta demais cores entrar em contato', 45.00),
+	(10, '/henrimack sistsolut/uploads/puff redndo 1m.webp', 'Puff\'s', 'Puff redondo grande', 'Branca/preta demais cores entrar em conato', 120.00),
+	(11, '/henrimack sistsolut/uploads/puff pera.jfif', 'Puff\'s', 'Puff pera', 'diversas cores', 75.00),
+	(12, '/henrimack sistsolut/uploads/puff meia lua.jfif', 'Puff\'s', 'Puff meia lua', 'Branca/preta demais cores entrar em conatato', 190.00),
+	(13, '/henrimack sistsolut/uploads/puff barc.webp', 'Puff\'s', 'Puff barcelona', 'Branca/preta demais cores entrar em contato', 130.00),
+	(14, '/henrimack sistsolut/uploads/puff quadrado.webp', 'Puff\'s', 'Puff 45x45 ', 'Branca/preta demais cores entrar em contato', 45.00),
+	(16, '/henrimack sistsolut/uploads/Prateleiras pretas.jfif', 'Eletro/Acessórios', 'Prateleira de depósito ', 'preta', 55.00),
+	(17, '/henrimack sistsolut/uploads/transferir (5).jfif', 'Eletro/Acessórios', 'Porta folder ', 'cromado', 60.00),
+	(18, '/henrimack sistsolut/uploads/Poltrona Tulipa Branca.webp', 'Sofá/Poltronas', 'Poltrona tulipa ', 'Branca/Preta demais cores consultar', 160.00),
+	(19, '/henrimack sistsolut/uploads/Poltrona Swan Branca.webp', 'Sofá/Poltronas', 'Poltrona swan', 'Branca/Preta demais cores consultar', 220.00),
+	(20, '/henrimack sistsolut/uploads/Poltrona Monalisa.webp', 'Sofá/Poltronas', 'Poltrona monalisa', 'Bege claro', 280.00),
+	(21, '/henrimack sistsolut/uploads/poltrona lc.webp', 'Sofá/Poltronas', 'Poltrona Lc', 'Branca/preta', 180.00),
+	(22, '/henrimack sistsolut/uploads/Poltrona Branca 1 lugar Fk.jfif', 'Sofá/Poltronas', 'Poltrona fk ', 'Branca/preta', 215.00),
+	(23, '/henrimack sistsolut/uploads/Poltrona Ferradura Preta.jfif', 'Sofá/Poltronas', 'Poltrona ferradura ', 'Branca/Preta', 130.00),
+	(24, '/henrimack sistsolut/uploads/poltrona_barcelona_branca_2.webp', 'Sofá/Poltronas', 'Poltrona barcelona', 'Branca/preta demais cores entrar em contato', 210.00),
+	(25, '/henrimack sistsolut/uploads/transferir (8).jfif', 'Eletro/Acessórios', 'Microondas', 'branco', 200.00),
+	(26, '/henrimack sistsolut/uploads/mesa.jfif', 'Mesas/Cadeiras', 'Mesa saarinem diametro de 80', 'Branca/preta demais cores entrar em contato', 380.00),
+	(28, '/henrimack sistsolut/uploads/Mesa com tampo de vidro pe palito.jfif', 'Mesas/Cadeiras', 'Mesa pé x', 'Tampo de vidro/MDF', 45.00),
+	(29, '/henrimack sistsolut/uploads/transferir (1).jfif', 'Mesas/Cadeiras', 'Mesa eiffel', 'Branca/preta demais cores consultar', 85.00),
+	(32, '/henrimack sistsolut/uploads/Mesa de Centro ferro 50x50.jpg', 'Mesas/Cadeiras', 'Mesa de centro 50x50', 'Tampo MDF amadeirado', 70.00),
+	(33, '/henrimack sistsolut/uploads/wood.webp', 'Mesas/Cadeiras', 'Mesa de canto wood', 'Branca/preta demais cores entrar em contato', 70.00),
+	(34, '/henrimack sistsolut/uploads/Mesa-Canto-Sony-50x80cm retangular.jpg', 'Mesas/Cadeiras', 'Mesa de canto sony retangular', 'cromada', 70.00),
+	(35, '/henrimack sistsolut/uploads/Mesa-Centro-Sony-50x50cm.jpg', 'Mesas/Cadeiras', 'Mesa de canto sony ', 'cromada', 70.00),
+	(36, '/henrimack sistsolut/uploads/Mesa De Centro Sarinen Branca.jfif', 'Mesas/Cadeiras', 'Mesa de canto saarinem', 'Branca/preta demais cores entrar em contato', 70.00),
+	(37, '/henrimack sistsolut/uploads/mesa-lateral-redonda-42-cm-cromado-incolor-gal-xia_st0.webp', 'Mesas/Cadeiras', 'Mesa de canto pálito', 'cromada', 70.00),
+	(38, '/henrimack sistsolut/uploads/Mesa-canto-Jacaranda-50x50-1.jpg', 'Mesas/Cadeiras', 'Mesa de canto em MDF', 'Entrar em contato', 80.00),
+	(39, '/henrimack sistsolut/uploads/mesa-lateral-redonda-42-cm-preto-terracota-pirlo_st0.webp', 'Mesas/Cadeiras', 'Mesa de canto base de ferro', 'Branca/Preta demais cores entrar em contato', 70.00),
+	(40, '/henrimack sistsolut/uploads/mesa de centro cromada redonda.jfif', 'Mesas/Cadeiras', 'Mesa de canto', 'cromado', 70.00),
+	(41, '/henrimack sistsolut/uploads/Lixeira PVC vai e vem 60L.jfif', 'Eletro/Acessórios', 'Lixeira pvc tampa vai e vem 60L', 'Branca', 40.00),
+	(42, '/henrimack sistsolut/uploads/Lixeira pvc branca.webp', 'Eletro/Acessórios', 'Lixeira pvc', 'Branca/Preta', 10.00),
+	(43, '/henrimack sistsolut/uploads/Lixeira Cromada Sem Tampo 11L.jfif', 'Eletro/Acessórios', 'Lixeira cromada', 'cromada', 15.00),
+	(45, '/henrimack sistsolut/uploads/Geladeira Duplex.jfif', 'Eletro/Acessórios', 'Geladeira duplex', 'Branca', 250.00),
+	(46, '/henrimack sistsolut/uploads/180724-800-800.webp', 'Eletro/Acessórios', 'Frigobar retro', 'Preto', 200.00),
+	(47, '/henrimack sistsolut/uploads/FRIGOBAR ELETROLUX.webp', 'Eletro/Acessórios', 'Frigobar', 'Branco', 190.00),
+	(48, '/henrimack sistsolut/uploads/images.jfif', 'Mesas/Cadeiras', 'Cadeira milano', 'Branca/preta demais cores entrar em contato', 25.00),
+	(49, '/henrimack sistsolut/uploads/cadeira jacobsen com rodizio.jfif', 'Mesas/Cadeiras', 'Cadeira jacobsen com rodizio', 'Branca/preta demais cores entrar em conato', 60.00),
+	(50, '/henrimack sistsolut/uploads/cadeira jacobsen preta.jfif', 'Mesas/Cadeiras', 'Cadeira jacobsen', 'Branca/preta', 50.00),
+	(51, '/henrimack sistsolut/uploads/cadeira dkr com rodizio.jfif', 'Mesas/Cadeiras', 'Cadeira dkr com rodizio', 'Branca/preta demais cores entrar em contato', 60.00),
+	(52, '/henrimack sistsolut/uploads/transferir (2).jfif', 'Mesas/Cadeiras', 'Cadeira dkr com base madeira', 'Branco/preta demais cores entrar em contato', 80.00),
+	(53, '/henrimack sistsolut/uploads/cadeira dkr com braco com base cromada.jfif', 'Mesas/Cadeiras', 'Cadeira dkr base cromada', 'Branca/preta', 85.00),
+	(54, '/henrimack sistsolut/uploads/cadeira.webp', 'Mesas/Cadeiras', 'Cadeira dkr acrilico', 'Incolor', 70.00),
+	(55, '/henrimack sistsolut/uploads/Cadeira eiffel branca.webp', 'Mesas/Cadeiras', 'Cadeira dkr ', 'Branca/Preta demais cores entrar em contato', 45.00),
+	(56, '/henrimack sistsolut/uploads/transferir (4).jfif', 'Mesas/Cadeiras', 'Cadeira diretor', 'Branca/preta', 140.00),
+	(57, '/henrimack sistsolut/uploads/transferir.jfif', 'Bistrô', 'Bistro oxy', 'tampo MDF', 80.00),
+	(58, '/henrimack sistsolut/uploads/4.webp', 'Bistrô', 'Bistro eiffel', 'Branca/preta demais cores consultar', 90.00),
+	(60, '/henrimack sistsolut/uploads/bistro pe cafe.jpg', 'Bistrô', 'Bistro café cromado', 'Tampo vidro/MDF', 50.00),
+	(61, '/henrimack sistsolut/uploads/da29e4cf98a0b1500abc512252dc24a6.webp', 'Eletro/Acessórios', 'Bebedouro de coluna', 'preto', 200.00),
+	(62, '/henrimack sistsolut/uploads/transferir.webp', 'Banquetas', 'Banqueta tolix', 'Branca/Preta demais cores entrar em contato', 40.00),
+	(63, '/henrimack sistsolut/uploads/banqueta toledo branca.jfif', 'Banquetas', 'Banqueta toledo', 'Branca/preta demais cores consultar', 65.00),
+	(64, '/henrimack sistsolut/uploads/Banqueta Star Preta.jfif', 'Banquetas', 'Banqueta star ', 'Branca/preta demais cores consultar', 40.00),
+	(65, '/henrimack sistsolut/uploads/banqueta sarinem.jfif', 'Banquetas', 'Banqueta saarinem', 'Branca/preta', 60.00),
+	(66, '/henrimack sistsolut/uploads/banqueta oxy.jfif', 'Banquetas', 'Banqueta oxy', 'Demais cores do assento', 45.00),
+	(67, '/henrimack sistsolut/uploads/Banqueta Sofia Branca.jfif', 'Banquetas', 'Banqueta len ', 'Branca/preta', 55.00),
+	(68, '/henrimack sistsolut/uploads/banqueta jacobsen branca.jfif', 'Banquetas', 'Banqueta jacobsen', 'Branca/preta demais cores consultar', 55.00),
+	(69, '/henrimack sistsolut/uploads/banqueta eiffel.jfif', 'Banquetas', 'Banqueta eiffel', 'Branca/preta demais cores consultar', 75.00),
+	(70, '/henrimack sistsolut/uploads/Banqueta Bela Branca (confort Gomos).webp', 'Banquetas', 'Banqueta comfort', 'Branca/preta', 65.00),
+	(71, '/henrimack sistsolut/uploads/banqueta amsterdan.jfif', 'Banquetas', 'Banqueta amsterdan', 'Branca/preta', 300.00),
+	(72, '/henrimack sistsolut/uploads/D_NQ_NP_954050-MLB50498449399_062022-O.webp', 'Eletro/Acessórios', 'Armario locker 8 portas', 'cinza', 200.00),
+	(73, '/henrimack sistsolut/uploads/armario baixo.webp', 'Eletro/Acessórios', 'Armário baixo', 'Branca/preta', 75.00),
+	(74, '/henrimack sistsolut/uploads/transferir (7).jfif', 'Eletro/Acessórios', 'Aparador ', 'branco', 120.00),
+	(75, '/henrimack sistsolut/uploads/unnamed.webp', 'Eletro/Acessórios', 'Almofadas 35x35', 'diversas cores', 40.00);
+
+-- Copiando estrutura para tabela ere.produtosorcamento
+CREATE TABLE IF NOT EXISTS `produtosorcamentohenr` (
+  `idproduto` int(11) NOT NULL AUTO_INCREMENT,
+  `idorcamento` int(11) NOT NULL,
+  `codigounico` varchar(255) NOT NULL,
+  `imagem` varchar(255) NOT NULL,
+  `tipo` varchar(255) NOT NULL,
+  `modelos` varchar(255) NOT NULL,
+  `cor` varchar(255) NOT NULL,
+  `valor` decimal(10,2) NOT NULL,
+  `quantidade` int(11) NOT NULL,
+  PRIMARY KEY (`idproduto`),
+  KEY `idorcamento` (`idorcamento`),
+  CONSTRAINT `produtosorcamentohenr_ibfk_1` FOREIGN KEY (`idorcamento`) REFERENCES `orcamento` (`idorcamento`)
+) ENGINE=InnoDB AUTO_INCREMENT=66 DEFAULT CHARSET=utf8mb4;
+
+-- Copiando dados para a tabela ere.produtosorcamento: ~58 rows (aproximadamente)
+INSERT INTO `produtosorcamentohenr` (`idproduto`, `idorcamento`, `codigounico`, `imagem`, `tipo`, `modelos`, `cor`, `valor`, `quantidade`) VALUES
+	(1, 6, 'hen546-0001', 'http://localhost/henrimack sistsolut/uploads/transferir%20(6).jfif', 'Eletro/Acessórios', 'Unifila fita até 2m', 'cromado', 70.00, 0),
+	(2, 6, 'hen546-0001', 'http://localhost/henrimack sistsolut/uploads/tapete-redondo-1-m-mel-o-fluffy_spin6.webp', 'Eletro/Acessórios', 'Tapete redondo', 'cores variasdas', 200.00, 0),
+	(3, 7, 'hen546-0002', 'http://localhost/henrimack sistsolut/uploads/transferir%20(6).jfif', 'Eletro/Acessórios', 'Unifila fita até 2m', 'cromado', 70.00, 0),
+	(4, 7, 'hen546-0002', 'http://localhost/henrimack sistsolut/uploads/tapete-redondo-1-m-mel-o-fluffy_spin6.webp', 'Eletro/Acessórios', 'Tapete redondo', 'cores variasdas', 200.00, 0),
+	(5, 8, 'mak341-0001', 'http://localhost/henrimack sistsolut/uploads/transferir%20(6).jfif', 'Eletro/Acessórios', 'Unifila fita até 2m', 'cromado', 70.00, 0),
+	(6, 8, 'mak341-0001', 'http://localhost/henrimack sistsolut/uploads/tapete-redondo-1-m-mel-o-fluffy_spin6.webp', 'Eletro/Acessórios', 'Tapete redondo', 'cores variasdas', 200.00, 0),
+	(7, 9, 'mak341-0002', 'http://localhost/henrimack sistsolut/uploads/transferir%20(6).jfif', 'Eletro/Acessórios', 'Unifila fita até 2m', 'cromado', 70.00, 0),
+	(8, 9, 'mak341-0002', 'http://localhost/henrimack sistsolut/uploads/tapete-redondo-1-m-mel-o-fluffy_spin6.webp', 'Eletro/Acessórios', 'Tapete redondo', 'cores variasdas', 200.00, 0),
+	(9, 10, 'mak341-0003', 'http://localhost/henrimack sistsolut/uploads/transferir%20(6).jfif', 'Eletro/Acessórios', 'Unifila fita até 2m', 'cromado', 70.00, 4),
+	(10, 10, 'mak341-0003', 'http://localhost/henrimack sistsolut/uploads/tapete-redondo-1-m-mel-o-fluffy_spin6.webp', 'Eletro/Acessórios', 'Tapete redondo', 'cores variasdas', 200.00, 2),
+	(11, 10, 'mak341-0003', 'http://localhost/henrimack sistsolut/uploads/transferir%20(9).jfif', 'Eletro/Acessórios', 'Pulpito de acrilico', 'Incolor', 360.00, 2),
+	(12, 11, 'mak341-0004', 'http://localhost/henrimack sistsolut/uploads/transferir%20(6).jfif', 'Eletro/Acessórios', 'Unifila fita até 2m', 'cromado', 70.00, 4),
+	(13, 11, 'mak341-0004', 'http://localhost/henrimack sistsolut/uploads/tapete-redondo-1-m-mel-o-fluffy_spin6.webp', 'Eletro/Acessórios', 'Tapete redondo', 'cores variasdas', 200.00, 2),
+	(14, 11, 'mak341-0004', 'http://localhost/henrimack sistsolut/uploads/transferir%20(9).jfif', 'Eletro/Acessórios', 'Pulpito de acrilico', 'Incolor', 360.00, 2),
+	(15, 11, 'mak341-0004', 'http://localhost/henrimack sistsolut/uploads/Poltrona%20Tulipa%20Branca.webp', 'Sofá/Poltronas', 'Poltrona tulipa', 'Branca/Preta demais cores consultar', 160.00, 3),
+	(16, 12, 'mak341-0005', 'http://localhost/henrimack sistsolut/uploads/transferir%20(6).jfif', 'Eletro/Acessórios', 'Unifila fita até 2m', 'cromado', 70.00, 4),
+	(17, 12, 'mak341-0005', 'http://localhost/henrimack sistsolut/uploads/tapete-redondo-1-m-mel-o-fluffy_spin6.webp', 'Eletro/Acessórios', 'Tapete redondo', 'cores variasdas', 200.00, 2),
+	(18, 12, 'mak341-0005', 'http://localhost/henrimack sistsolut/uploads/transferir%20(9).jfif', 'Eletro/Acessórios', 'Pulpito de acrilico', 'Incolor', 360.00, 2),
+	(19, 13, 'mak341-0006', 'http://localhost/henrimack sistsolut/uploads/transferir%20(6).jfif', 'Eletro/Acessórios', 'Unifila fita até 2m', 'cromado', 70.00, 4),
+	(20, 13, 'mak341-0006', 'http://localhost/henrimack sistsolut/uploads/tapete-redondo-1-m-mel-o-fluffy_spin6.webp', 'Eletro/Acessórios', 'Tapete redondo', 'cores variasdas', 200.00, 2),
+	(21, 13, 'mak341-0006', 'http://localhost/henrimack sistsolut/uploads/transferir%20(9).jfif', 'Eletro/Acessórios', 'Pulpito de acrilico', 'Incolor', 360.00, 2),
+	(22, 13, 'mak341-0006', 'http://localhost/henrimack sistsolut/uploads/unnamed.webp', 'Eletro/Acessórios', 'Almofadas 35x35', 'diversas cores', 40.00, 10),
+	(23, 14, 'mak341-0007', 'http://localhost/henrimack sistsolut/uploads/transferir%20(6).jfif', 'Eletro/Acessórios', 'Unifila fita até 2m', 'cromado', 70.00, 4),
+	(24, 14, 'mak341-0007', 'http://localhost/henrimack sistsolut/uploads/tapete-redondo-1-m-mel-o-fluffy_spin6.webp', 'Eletro/Acessórios', 'Tapete redondo', 'cores variasdas', 200.00, 2),
+	(25, 14, 'mak341-0007', 'http://localhost/henrimack sistsolut/uploads/transferir%20(9).jfif', 'Eletro/Acessórios', 'Pulpito de acrilico', 'Incolor', 360.00, 2),
+	(26, 14, 'mak341-0007', 'http://localhost/henrimack sistsolut/uploads/unnamed.webp', 'Eletro/Acessórios', 'Almofadas 35x35', 'diversas cores', 40.00, 10),
+	(27, 15, 'mak341-0008', 'http://localhost/henrimack sistsolut/uploads/transferir%20(6).jfif', 'Eletro/Acessórios', 'Unifila fita até 2m', 'cromado', 70.00, 4),
+	(28, 15, 'mak341-0008', 'http://localhost/henrimack sistsolut/uploads/tapete-redondo-1-m-mel-o-fluffy_spin6.webp', 'Eletro/Acessórios', 'Tapete redondo', 'cores variasdas', 200.00, 2),
+	(29, 15, 'mak341-0008', 'http://localhost/henrimack sistsolut/uploads/transferir%20(9).jfif', 'Eletro/Acessórios', 'Pulpito de acrilico', 'Incolor', 360.00, 2),
+	(30, 15, 'mak341-0008', 'http://localhost/henrimack sistsolut/uploads/unnamed.webp', 'Eletro/Acessórios', 'Almofadas 35x35', 'diversas cores', 40.00, 10),
+	(31, 16, 'mak341-0009', 'http://localhost/henrimack sistsolut/uploads/transferir%20(6).jfif', 'Eletro/Acessórios', 'Unifila fita até 2m', 'cromado', 70.00, 4),
+	(32, 16, 'mak341-0009', 'http://localhost/henrimack sistsolut/uploads/tapete-redondo-1-m-mel-o-fluffy_spin6.webp', 'Eletro/Acessórios', 'Tapete redondo', 'cores variasdas', 200.00, 2),
+	(33, 16, 'mak341-0009', 'http://localhost/henrimack sistsolut/uploads/transferir%20(9).jfif', 'Eletro/Acessórios', 'Pulpito de acrilico', 'Incolor', 360.00, 2),
+	(34, 16, 'mak341-0009', 'http://localhost/henrimack sistsolut/uploads/unnamed.webp', 'Eletro/Acessórios', 'Almofadas 35x35', 'diversas cores', 40.00, 10),
+	(35, 17, 'mak341-0010', 'http://localhost/henrimack sistsolut/uploads/transferir%20(6).jfif', 'Eletro/Acessórios', 'Unifila fita até 2m', 'cromado', 70.00, 4),
+	(36, 17, 'mak341-0010', 'http://localhost/henrimack sistsolut/uploads/tapete-redondo-1-m-mel-o-fluffy_spin6.webp', 'Eletro/Acessórios', 'Tapete redondo', 'cores variasdas', 200.00, 2),
+	(37, 17, 'mak341-0010', 'http://localhost/henrimack sistsolut/uploads/transferir%20(9).jfif', 'Eletro/Acessórios', 'Pulpito de acrilico', 'Incolor', 360.00, 2),
+	(38, 17, 'mak341-0010', 'http://localhost/henrimack sistsolut/uploads/unnamed.webp', 'Eletro/Acessórios', 'Almofadas 35x35', 'diversas cores', 40.00, 10),
+	(39, 18, '-0001', 'http://localhost/henrimack sistsolut/uploads/transferir%20(6).jfif', 'Eletro/Acessórios', 'Unifila fita até 2m', 'cromado', 70.00, 0),
+	(40, 18, '-0001', 'http://localhost/henrimack sistsolut/uploads/tapete-redondo-1-m-mel-o-fluffy_spin6.webp', 'Eletro/Acessórios', 'Tapete redondo', 'cores variasdas', 200.00, 0),
+	(41, 20, 'ste06.-0001', 'http://localhost/henrimack sistsolut/uploads/cadeira.webp', 'Mesas/Cadeiras', 'Cadeira dkr acrilico', 'Incolor', 70.00, 3),
+	(42, 21, 'hen229-0001', 'http://localhost/henrimack sistsolut/uploads/banqueta%20toledo%20branca.jfif', 'Banquetas', 'Banqueta toledo', 'Branca/preta demais cores consultar', 65.00, 0),
+	(43, 22, 'hen229-0002', 'http://localhost/henrimack sistsolut/uploads/banqueta%20toledo%20branca.jfif', 'Banquetas', 'Banqueta toledo', 'Branca/preta demais cores consultar', 65.00, 0),
+	(44, 23, '-0003', 'http://localhost/henrimack sistsolut/uploads/unnamed.webp', 'Eletro/Acessórios', 'Almofadas 35x35', 'diversas cores', 40.00, 2),
+	(45, 24, '-0004', 'http://localhost/henrimack sistsolut/uploads/unnamed.webp', 'Eletro/Acessórios', 'Almofadas 35x35', 'diversas cores', 40.00, 2),
+	(46, 26, '-0006', 'http://localhost/henrimack sistsolut/uploads/transferir.webp', 'Banquetas', 'Banqueta tolix', 'Branca/Preta demais cores entrar em contato', 40.00, 30),
+	(47, 26, '-0006', 'http://localhost/henrimack sistsolut/uploads/banqueta%20toledo%20branca.jfif', 'Banquetas', 'Banqueta toledo', 'Branca/preta demais cores consultar', 65.00, 10),
+	(48, 27, '-0007', 'http://localhost/henrimack sistsolut/uploads/sofa.webp', 'Sofá/Poltronas', 'Sofá Lc 3 lugares', 'Branca/preta demais cores consultar', 290.00, 0),
+	(49, 27, '-0007', 'http://localhost/henrimack sistsolut/uploads/sofa%20lc%20branco%202%20lugares.webp', 'Sofá/Poltronas', 'Sofá Lc 2 lugares', 'Branca/preta demais cores consultar', 230.00, 0),
+	(50, 28, 'hen229-0003', 'http://localhost/henrimack sistsolut/uploads/sofa.webp', 'Sofá/Poltronas', 'Sofá Lc 3 lugares', 'Branca/preta demais cores consultar', 290.00, 45),
+	(51, 28, 'hen229-0003', 'http://localhost/henrimack sistsolut/uploads/sofa%20lc%20branco%202%20lugares.webp', 'Sofá/Poltronas', 'Sofá Lc 2 lugares', 'Branca/preta demais cores consultar', 230.00, 23),
+	(52, 29, 'ste06.-0002', 'http://localhost/henrimack sistsolut/uploads/transferir.webp', 'Banquetas', 'Banqueta tolix', 'Branca/Preta demais cores entrar em contato', 40.00, 0),
+	(53, 30, 'ste06.-0003', 'http://localhost/henrimack sistsolut/uploads/transferir.webp', 'Banquetas', 'Banqueta tolix', 'Branca/Preta demais cores entrar em contato', 40.00, 0),
+	(54, 32, 'hen229-0004', 'http://localhost/henrimack sistsolut/uploads/transferir.webp', 'Banquetas', 'Banqueta tolix', 'Branca/Preta demais cores entrar em contato', 40.00, 0),
+	(55, 32, 'hen229-0004', 'http://localhost/henrimack sistsolut/uploads/sofa%20lc%20branco%202%20lugares.webp', 'Sofá/Poltronas', 'Sofá Lc 2 lugares', 'Branca/preta demais cores consultar', 230.00, 0),
+	(56, 32, 'hen229-0004', 'http://localhost/henrimack sistsolut/uploads/4.webp', 'Bistrô', 'Bistro eiffel', 'Branca/preta demais cores consultar', 90.00, 0),
+	(57, 32, 'hen229-0004', 'http://localhost/henrimack sistsolut/uploads/puff%20meia%20lua.jfif', 'Puff\'s', 'Puff meia lua', 'Branca/preta demais cores entrar em conatato', 190.00, 0),
+	(58, 32, 'hen229-0004', 'http://localhost/henrimack sistsolut/uploads/transferir%20(1).jfif', 'Mesas/Cadeiras', 'Mesa eiffel', 'Branca/preta demais cores consultar', 85.00, 0),
+	(59, 32, 'hen229-0004', 'http://localhost/henrimack sistsolut/uploads/cadeira%20jacobsen%20preta.jfif', 'Mesas/Cadeiras', 'Cadeira jacobsen', 'Branca/preta', 50.00, 0),
+	(60, 32, 'hen229-0004', 'http://localhost/henrimack sistsolut/uploads/cadeira%20dkr%20com%20rodizio.jfif', 'Mesas/Cadeiras', 'Cadeira dkr com rodizio', 'Branca/preta demais cores entrar em contato', 60.00, 0),
+	(61, 32, 'hen229-0004', 'http://localhost/henrimack sistsolut/uploads/transferir%20(2).jfif', 'Mesas/Cadeiras', 'Cadeira dkr com base madeira', 'Branco/preta demais cores entrar em contato', 80.00, 0),
+	(62, 32, 'hen229-0004', 'http://localhost/henrimack sistsolut/uploads/transferir%20(6).jfif', 'Eletro/Acessórios', 'Unifila fita até 2m', 'cromado', 70.00, 0),
+	(63, 32, 'hen229-0004', 'http://localhost/henrimack sistsolut/uploads/tapete-redondo-1-m-mel-o-fluffy_spin6.webp', 'Eletro/Acessórios', 'Tapete redondo', 'cores variasdas', 200.00, 0),
+	(64, 32, 'hen229-0004', 'http://localhost/henrimack sistsolut/uploads/Prateleiras%20pretas.jfif', 'Eletro/Acessórios', 'Prateleira de depósito', 'preta', 55.00, 0),
+	(65, 33, 'hen229-0005', 'http://localhost/henrimack sistsolut/uploads/unnamed.webp', 'Eletro/Acessórios', 'Almofadas 35x35', 'diversas cores', 40.00, 10);
+
+-- Copiando estrutura para tabela ere.users
+CREATE TABLE IF NOT EXISTS `usershenr` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `username` (`username`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+
+-- Copiando dados para a tabela ere.users: ~1 rows (aproximadamente)
+INSERT INTO `usershenr` (`id`, `username`, `password`) VALUES
+	(1, 'hen', '0000');
+
+/*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
+/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
+/*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40111 SET SQL_NOTES=IFNULL(@OLD_SQL_NOTES, 1) */;

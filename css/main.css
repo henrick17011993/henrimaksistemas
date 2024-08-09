@@ -1,0 +1,578 @@
+body {
+    padding: 0;
+    margin: 0;
+    background: #ffffff; 
+    color: #6a11cb; 
+}
+
+body div.show a#btnPDF, #orcamentoForm, #TabelaEntregaForm, #CadastroEditar, #CadastroAtualizar{
+    cursor: pointer;
+}
+
+header {
+    display: flex;
+    background: linear-gradient(to right, #6a11cb, hsla(252, 13%, 46%, 1));
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+}
+
+h1 {
+    font-family: sans-serif;
+    color: #ffffff;
+    font-size: 60px;
+    text-decoration: none;
+    background: #6a11cb;
+    display: flex;
+    align-items: center;
+}
+
+ul, li {
+    display: flex;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #ffffff;
+    font-size: 22px;
+    padding: 2px;
+    text-decoration: none;
+}
+
+header a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+main {
+    min-height: calc(100vh - 407px);
+    padding: 3vw;
+}
+
+main div.show {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 100%;
+    box-shadow: 0 0 4px #0808087c;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-size: 20px;
+    background: linear-gradient(to right, #6a11cb, hsla(252, 13%, 46%, 1));
+    color: #ffffff;
+    max-height: 1020px; 
+    overflow: auto;   
+}
+
+main div.card-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main .tabela {
+    width: 100%;
+}
+
+table, td{
+    text-align: center;
+}
+
+table, td, th {
+    border-bottom-right-radius: 1px #fff; 
+    border-collapse: initial;
+    padding: 20px;
+    text-align: start;
+    padding-right: 100px;
+}
+
+table #btnPDF {
+    cursor: pointer;
+    margin: 5px;
+}
+
+table .actions {
+    display: flex;
+}
+
+table .actions a {
+    color: #333; 
+    text-decoration: none;
+    margin: 5px;
+}
+
+fieldset form {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+fieldset div {
+    display: flex;
+    font-size: 15px;
+    padding: 60px;
+}
+
+fieldset {
+    border: none; 
+}
+
+fieldset, div .buttons {
+    display: flex;
+    font-size: 15px;
+    padding: 0px;
+    flex-direction: row;
+}
+
+fieldset form {
+    display: flex;
+    padding: 15px;
+    justify-content: center
+}
+
+footer {
+    padding: 30px;
+    max-height: 40px;
+    background: linear-gradient(to right, #6a11cb, hsla(252, 13%, 46%, 1));
+    color: #ffffff;
+    flex-shrink: 0;
+    margin: 0; 
+}
+
+main div.show2 input, select, h4 {
+    display: flex;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    justify-content: flex-start;
+    margin: 0 10px;
+}
+
+main div.but {
+    text-align: end;
+    text-shadow: none;
+}
+
+#btnButton {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #6a11cb;
+    background: #fff;
+    padding: 10px;
+    border-radius: 15px;
+    text-decoration: none;
+    font-size: 13px;
+    text-align: end;
+    border: none;
+}
+#orcamentoForm, #TabelaEntregaForm{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #6a11cb;
+    background: #fff;
+    padding: 10px;
+    border-radius: 15px;
+    text-decoration: none;
+    font-size: 13px;
+    text-align: end;
+    border: none;
+    position: fixed;
+    top: 777px;
+    right: 81px;
+    z-index: 1000;
+}
+
+#clientesubmit{
+    display: flex;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #6a11cb;
+    background: #fff;
+    padding: 11px;
+    border-radius: 5px;
+    font-size: 13px;
+    text-align: end;
+    border: none;
+    margin-left: 1950px;
+}
+
+#clienteatualizar{
+    display: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #6a11cb;
+    background: #fff;
+    padding: 11px;
+    border-radius: 5px;
+    font-size: 13px;
+    text-align: end;
+    border: none;
+    margin-left: 1950px;
+}
+
+#CadastroAtualizar{
+    display: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #6a11cb;
+    background: #fff;
+    padding: 11px;
+    border-radius: 5px;
+    font-size: 13px;
+    text-align: end;
+    border: none;
+    margin-left: 1950px;
+    margin-top: -64px;
+}
+
+#CadastroEditar, #btnButton{
+    display: flex;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #6a11cb;
+    background: #fff;
+    padding: 11px;
+    border-radius: 5px;
+    font-size: 13px;
+    text-align: end;
+    border: none;
+    margin-left: 1950px;
+    margin-top: -64px;
+}
+
+table .actions a {
+    cursor: pointer;
+    margin: 5px;
+}
+
+main div.buttons {
+    justify-content: end;
+}
+
+#imagemInput {
+    display: inline-block;
+    padding: 11px 11px;
+    margin-block-end: 253px;
+    background: #ffffff; 
+    color: #6a11cb;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.div-input {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    
+}
+
+#divImagem {
+    align-items: center;
+    margin-top: 12px;
+    margin-block-end: -246px;
+}
+
+#imagemExibicao, #imagemInput {
+    max-width: 100%;
+}
+
+
+.div-input input, .div-input select {
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    padding: 8px;
+    background: #ffffff;
+    color: #6a11cb;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.div-input input:focus, .div-input select:focus {
+    outline: none;
+    border-color: #ffffff; 
+    box-shadow: 0 0 8px #f8f8f8;
+}
+
+.div-input select {
+    appearance: none;
+    background-repeat: no-repeat;
+    background-position: right center;
+}
+
+.div-input input::placeholder, .div-input select::placeholder {
+    color: #888; 
+}
+
+.div-input input:hover, .div-input select:hover {
+    border-color: #ffffff; 
+    box-shadow: 0 0 8px #ffffff; 
+}
+
+.image-container {
+    width: 100px; 
+    height: 100px; 
+    overflow: hidden;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+}
+
+
+input[type="checkbox"][name^="product_checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 34px;
+    height: 34px;
+    border: 2px solid #ffffff;
+    border-radius: 13px;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    margin: 0;
+}
+
+
+input[type="checkbox"][name^="product_checkbox"]:checked {
+    background-color: #ffffff;
+}
+
+
+input[type="checkbox"][name^="product_checkbox"]::before {
+    content: '\2713'; 
+    font-size: 16px;
+    color: #6a11cb; 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+
+input[type="checkbox"][name^="product_checkbox"]:checked::before {
+    display: block;
+}
+
+
+input[type="checkbox"][name^="product_checkbox"] + label {
+    padding-left: 10px;
+    cursor: pointer;
+}
+
+
+td {
+    text-align: initial;
+    padding: 10px 20px 4px 6px;
+}
+
+input[type="checkbox"][name^="product_checkbox"] + label {
+    padding-left: 10px; 
+    cursor: pointer;
+}
+
+
+input[type="checkbox"][name^="product_checkbox"] + label::before {
+    padding-left: 5px; 
+}
+
+.orcamento {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 100%;
+    box-shadow: 0 0 4px #0808087c;
+    padding: 16px 18px;
+    border-radius: 10px;
+    font-size: 20px;
+    background: linear-gradient(to right, #6a11cb, hsla(252, 13%, 46%, 1));
+    color: #ffffff;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 84px;
+}
+
+.card-head {
+    margin-bottom: 15px;
+}
+
+div.orcamento .div-input {
+    width: calc(33.33% - 15px); 
+    margin-bottom: 15px;
+}
+
+.div-input label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.div-input input, #frete {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#checkboxSemValores {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 88px;
+    height: 27px;
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    margin: 0;
+    transition: background-color 0.3s; 
+}
+
+#checkboxSemValores:checked::before {
+    content: '\2713'; 
+    font-size: 16px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #6a11cb; 
+}
+
+#checkboxSemValores:checked {
+    background-color: #ffffff; 
+    color: #6a11cb; 
+}
+
+.tooltip-container {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip {
+    position: absolute;
+    display: none;
+    background: #6a11cb;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    white-space: nowrap;
+    z-index: 1;
+    bottom: 125%; 
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.tooltip-trigger:hover + .tooltip,
+.tooltip:hover {
+    display: block;
+}
+
+#searchInput, #searchInputCliente{
+    width: 200px; 
+    padding: 8px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    font-size: 14px; 
+    margin-top: 10px; 
+}
+
+#searchInput:focus {
+    border-color: #6a11cb; 
+    outline: none; 
+}
+#searchInputCliente:focus {
+    border-color: #6a11cb; 
+    outline: none; 
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 0px;
+    position: relative;
+}
+
+nav ul li a:hover {
+    background-color: #1152d2;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #6a11cb;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius:5px;
+    overflow: hidden;
+    width: 172px;
+    margin-top: 45px;
+    transform: translateY(10px); /* Adicionando um leve deslocamento para baixo */
+}
+
+.dropdown-content ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Alteração para exibir em coluna */
+}
+
+.dropdown-content ul li {
+    border-bottom: 0px solid #fff;
+}
+
+.dropdown-content ul li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 0px 8px;
+    transition: background-color 0.3s;
+    font-size: 16px;
+}
+
+.dropdown-content ul li a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content.submenu {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 200px;
+    margin-top: 0;
+    transform: translateY(-10px); /* Ajusta o submenu para cima */
+    border-radius: 0 4px 4px 0; /* Borda arredondada apenas no lado direito */
+    box-shadow: -8px 8px 16px 0px rgba(0,0,0,0.2); /* Sombra no lado esquerdo */
+}
+
+.div-textearea textarea {
+    width: 80%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid transparent;
+    border-radius:8px;
+    font-size: 19px;
+    resize: none; 
+}
+.div-textearea textarea:focus {
+    outline: none; 
+    border-color: transparent;
+}
+input[readonly] {
+    opacity: 0.2;
+    pointer-events: none;
+}
+
+.disabled-select {
+    background-color: #e9ecef;
+    pointer-events: none;
+    opacity: 0.2;
+    outline: none; 
+    border-color: transparent;
+}
+
+.tippy-box[data-theme='light'] {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    max-width: 400px !important; 
+    border: 0px solid #ddd; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+    padding: 8px; 
+    font-size: 14px; 
+    border-radius: 5px; 
+}

@@ -1,0 +1,81 @@
+/* Estilos para o container do login */
+.login-container, .dashboard-container {
+    background-color: #2c3e50;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    text-align: center;
+}
+
+/* Títulos */
+.login-container h2, .dashboard-container h1 {
+    margin-bottom: 20px;
+    color: #ecf0f1;
+    font-weight: 500;
+}
+
+/* Labels */
+.login-container label {
+    display: block;
+    margin-bottom: 5px;
+    color: #bdc3c7;
+}
+
+/* Inputs */
+.login-container input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #34495e;
+    color: #ecf0f1;
+    font-size: 16px;
+}
+
+.login-container input::placeholder {
+    color: #95a5a6;
+}
+
+/* Botões */
+.login-container button, .dashboard-container button, .dashboard-container a {
+    display: inline-block;
+    width: 100%;
+    padding: 15px 0;
+    margin: 10px 0;
+    background: linear-gradient(to right, #6a11cb, hsla(252, 13%, 46%, 1));
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+    font-size: 16px;
+}
+
+.login-container button:hover, .dashboard-container button:hover, .dashboard-container a:hover {
+    background: linear-gradient(to right, #4a00e0, #8e2de2);
+    transform: translateY(-3px);
+}
+
+.error {
+    color: #e74c3c;
+    margin-top: 10px;
+}
+
+/* Estilos adicionais para o dashboard */
+.dashboard-container h1 {
+    color: #ecf0f1;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+.dashboard-container p {
+    color: #bdc3c7;
+    margin-bottom: 30px;
+}
+
+.dashboard-container a, .dashboard-container button {
+    margin-top: 20px;
+}

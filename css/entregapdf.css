@@ -1,0 +1,50 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff; 
+    border-radius: 80px; 
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border: none; 
+}
+
+th {
+    background: #6a11cb;
+    color: #fff; 
+    border-radius: 50px;
+}
+
+tfoot {
+    font-weight: bold;
+}
+
+tfoot td {
+    padding-top: 10px;
+    border-top: none; 
+    border-radius: 0 0 10px 10px; 
+}
+
+.signature-row {
+    font-style: italic;
+    border-radius: 0 0 10px 10px; 
+}
+.image-cell {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.image-cell img {
+    height: auto;
+}
+.center {
+    text-align: center;
+}
+.image-cell {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
+}
